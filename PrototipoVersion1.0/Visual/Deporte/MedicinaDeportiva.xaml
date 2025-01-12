@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="PrototipoVersion1._0.Visual.Deporte.MedicinaDeportiva"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrototipoVersion1._0.Visual.Plantilla"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:fa="using:FontAwesome.UWP"
+    xmlns:local1="using:PrototipoVersion1._0.Visual.Plantilla"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <local1:Plantilla x:Name="SideMenu" Grid.Column="0"/>
+        <Frame x:Name="ContentFrame" Grid.Column="1"/>
+    </Grid>
+</Page>

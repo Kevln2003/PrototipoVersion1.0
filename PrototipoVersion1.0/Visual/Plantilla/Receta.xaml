@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="PrototipoVersion1._0.Visual.Plantilla.Receta"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrototipoVersion1._0.Visual.Plantilla"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="Receta Médica" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Text="Fecha:" FontSize="16" Margin="0,10,0,0"/>
+            <DatePicker Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Diagnóstico -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,20">
+            <TextBlock Text="Diagnóstico" FontSize="18" FontWeight="SemiBold"/>
+            <TextBox Height="100" TextWrapping="Wrap" AcceptsReturn="True"
+                     PlaceholderText="Ingrese el diagnóstico del paciente"/>
+        </StackPanel>
+
+        <!-- Tratamiento -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- RP -->
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="RP" FontSize="18" FontWeight="SemiBold"/>
+                <ListView x:Name="RpList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Rp, Mode=TwoWay}"
+                                    PlaceholderText="Ingrese medicamento"
+                                    Width="300"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Agregar Medicamento" 
+                        Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <!-- Indicaciones -->
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="Indicaciones" FontSize="18" FontWeight="SemiBold"/>
+                <ListView x:Name="IndicacionesList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Indicacion, Mode=TwoWay}"
+                                    PlaceholderText="Ingrese indicación"
+                                    Width="300"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Agregar Indicación" 
+                        Margin="0,10,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Botón Generar -->
+        <Button Grid.Row="3" 
+                Content="Generar Receta" 
+                Background="Green"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Width="200"/>
+    </Grid>
+</Page>
