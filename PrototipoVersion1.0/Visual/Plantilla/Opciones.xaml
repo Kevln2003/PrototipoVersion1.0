@@ -7,44 +7,116 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:fa="using:FontAwesome.UWP"
-
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Background="#f0f0f0" Padding="20">
-            <TextBlock Text="Logo" FontSize="20" Margin="0,0,0,30" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Column="0" Background="#F0FFF0" Padding="20">
+            <TextBlock Text="Logo" 
+                       FontSize="20" 
+                       Margin="0,0,0,30" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center"
+                       Foreground="#00796B"/>
 
-            <Button Foreground="Black" Margin="0,10,0,10" Padding="12" HorizontalAlignment="Stretch" Click="Button_Click">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <fa:FontAwesome Icon="UserCircle" Width="24" Height="24" Foreground="Blue" VerticalAlignment="Center"/>
-                    <TextBlock Text="Ingreso de paciente" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16"/>
-                </StackPanel>
-            </Button>
+            <Border CornerRadius="10" Margin="0,10">
+                <Button Background="Transparent" 
+                        Foreground="#00796B" 
+                        Margin="0" 
+                        Padding="12" 
+                        BorderBrush="#B2DFDB" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:FontAwesome Icon="UserCircle" Width="24" Height="24" Foreground="#00796B"/>
+                        <TextBlock Text="Ingreso de paciente" 
+                                   VerticalAlignment="Center" 
+                                   Margin="10,0,0,0" 
+                                   FontSize="16"/>
+                    </StackPanel>
+                </Button>
+            </Border>
 
-            <Button Foreground="Black" Margin="0,10,0,10" Padding="12" HorizontalAlignment="Stretch" Click="Button_Click_3">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <fa:FontAwesome Icon="Search" Width="24" Height="24" Foreground="Blue" VerticalAlignment="Center"/>
-                    <TextBlock Text="Búsqueda de paciente" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16"/>
-                </StackPanel>
-            </Button>
+            <Border CornerRadius="10" Margin="0,10">
+                <Button Background="Transparent" 
+                        Foreground="#00796B" 
+                        Margin="0" 
+                        Padding="12" 
+                        BorderBrush="#B2DFDB" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click_3">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:FontAwesome Icon="Search" Width="24" Height="24" Foreground="#00796B"/>
+                        <TextBlock Text="Búsqueda de paciente" 
+                                   VerticalAlignment="Center" 
+                                   Margin="10,0,0,0" 
+                                   FontSize="16"/>
+                    </StackPanel>
+                </Button>
+            </Border>
 
-            <Button Foreground="Black" Margin="0,10,0,10" Padding="12" HorizontalAlignment="Stretch" Click="Button_Click_2">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <fa:FontAwesome Icon="Archive" Width="24" Height="24" Foreground="Blue" VerticalAlignment="Center"/>
-                    <TextBlock Text="Receta médica" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16"/>
-                </StackPanel>
-            </Button>
+            <Border CornerRadius="10" Margin="0,10">
+                <Button Background="Transparent" 
+                        Foreground="#00796B" 
+                        Margin="0" 
+                        Padding="12" 
+                        BorderBrush="#B2DFDB" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click_2">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:FontAwesome Icon="Archive" Width="24" Height="24" Foreground="#00796B"/>
+                        <TextBlock Text="Receta médica" 
+                                   VerticalAlignment="Center" 
+                                   Margin="10,0,0,0" 
+                                   FontSize="16"/>
+                    </StackPanel>
+                </Button>
+            </Border>
 
-            <Button Foreground="Black" Margin="0,10,0,10" Padding="12" HorizontalAlignment="Stretch" Click="Button_Click_1">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <fa:FontAwesome Icon="Money" Width="24" Height="24" Foreground="Blue" VerticalAlignment="Center"/>
-                    <TextBlock Text="Facturación" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16"/>
-                </StackPanel>
-            </Button>
+            <Border CornerRadius="10" Margin="0,10">
+                <Button Background="Transparent" 
+                        Foreground="#00796B" 
+                        Margin="0" 
+                        Padding="12" 
+                        BorderBrush="#B2DFDB" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click_1">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:FontAwesome Icon="Money" Width="24" Height="24" Foreground="#00796B"/>
+                        <TextBlock Text="Facturación" 
+                                   VerticalAlignment="Center" 
+                                   Margin="10,0,0,0" 
+                                   FontSize="16"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+            <Border CornerRadius="10" Margin="0,150,0,10">
+                <Button Background="Transparent" 
+                        Foreground="#00796B" 
+                        Margin="0" 
+                        Padding="12" 
+                        BorderBrush="#B2DFDB" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click_4">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <fa:FontAwesome Icon="Home" Width="24" Height="24" Foreground="#00796B"/>
+                        <TextBlock Text="Regresar" 
+                                   VerticalAlignment="Center" 
+                                   Margin="10,0,0,0" 
+                                   FontSize="16"/>
+                    </StackPanel>
+                </Button>
+            </Border>
         </StackPanel>
 
     </Grid>

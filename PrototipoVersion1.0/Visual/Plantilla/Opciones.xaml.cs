@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using PrototipoVersion1._0.Visual.Deporte;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -42,5 +43,14 @@ namespace PrototipoVersion1._0.Visual.Plantilla
         private void Button_Click_2(object sender, RoutedEventArgs e) => NavigationRequested?.Invoke(this, "Receta");
 
         private void Button_Click_3(object sender, RoutedEventArgs e) => NavigationRequested?.Invoke(this, "Busqueda");
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var frame = Window.Current.Content as Frame;
+            if (frame != null)
+            {
+                frame.Navigate(typeof(MainPage));
+            }
+        }
+
     }
 }
