@@ -129,6 +129,8 @@
     <Compile Include="Visual\Deporte\MedicinaDeportiva.xaml.cs">
       <DependentUpon>MedicinaDeportiva.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Visual\Models\FacturaItem.cs" />
+    <Compile Include="Visual\Models\ItemDeReceta.cs" />
     <Compile Include="Visual\Pediatrico\IngresoPediatrico.xaml.cs">
       <DependentUpon>IngresoPediatrico.xaml</DependentUpon>
     </Compile>
@@ -147,6 +149,8 @@
     <Compile Include="Visual\Plantilla\Receta.xaml.cs">
       <DependentUpon>Receta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Visual\ViewModels\FacturaViewModel.cs" />
+    <Compile Include="Visual\ViewModels\RecetaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

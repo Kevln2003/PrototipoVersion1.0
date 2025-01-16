@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography.X509Certificates;
+using PrototipoVersion1._0.Visual.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +24,15 @@ namespace PrototipoVersion1._0.Visual.Plantilla
     /// </summary>
     public sealed partial class Receta : Page
     {
+        public RecetaViewModel ViewModel { get; }
+
         public Receta()
         {
             this.InitializeComponent();
+            ViewModel = new RecetaViewModel();
+            this.DataContext = ViewModel;
         }
+
+
     }
 }

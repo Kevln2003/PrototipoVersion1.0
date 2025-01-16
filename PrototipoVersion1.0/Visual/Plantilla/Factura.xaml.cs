@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using PrototipoVersion1._0.Visual.Plantilla.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -17,16 +18,15 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PrototipoVersion1._0.Visual.Plantilla
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class Factura : Page
     {
+        public FacturaViewModel ViewModel { get; }
+
         public Factura()
         {
             this.InitializeComponent();
+            ViewModel = new FacturaViewModel();
+            this.DataContext = ViewModel;
         }
-
-
     }
 }
