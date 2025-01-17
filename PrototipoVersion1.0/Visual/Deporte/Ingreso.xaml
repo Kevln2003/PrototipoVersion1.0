@@ -8,69 +8,230 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <ScrollViewer Grid.Column="1" Padding="20">
-            <StackPanel>
-                <TextBlock Text="Ingreso de Paciente" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
 
-                <!-- Datos del paciente -->
-                <StackPanel Margin="0,0,0,20">
-                    <TextBlock Text="Datos Personales" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Nombre:" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el nombre"/>
-                    </StackPanel>
+        <ScrollViewer>
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Apellido:" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el apellido"/>
-                    </StackPanel>
+                <!-- Título -->
+                <TextBlock Text="Registro de Paciente" 
+                       FontSize="28" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,20"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Celular:" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el número de celular"/>
-                    </StackPanel>
+                <!-- Contenido Principal -->
+                <StackPanel Grid.Row="1" Spacing="20">
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Correo:" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el correo electrónico"/>
-                    </StackPanel>
+                    <!-- Datos Personales -->
+                    <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Datos Personales" 
+                                 FontSize="20" 
+                                 FontWeight="SemiBold" 
+                                 Margin="0,0,0,10"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Dirección:" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese la dirección"/>
-                    </StackPanel>
+                            <Grid ColumnSpacing="15" RowSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Fecha de Nacimiento:" Width="150" VerticalAlignment="Center"/>
-                        <DatePicker Width="300"/>
-                    </StackPanel>
-                </StackPanel>
+                                <StackPanel Grid.Column="0" Spacing="10">
+                                    <TextBox Header="Nombres" PlaceholderText="Ingrese nombres"/>
+                                    <TextBox Header="Apellidos" PlaceholderText="Ingrese apellidos"/>
+                                    <TextBox Header="Cédula" PlaceholderText="Ingrese número de cédula"/>
+                                    <DatePicker Header="Fecha de Nacimiento"/>
+                                    <TextBox Header="Edad" PlaceholderText="Edad"/>
+                                </StackPanel>
 
-                <!-- Sección de datos para somatocarta -->
-                <StackPanel Margin="0,0,0,20">
-                    <TextBlock Text="Datos para Somatocarta" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                                <StackPanel Grid.Column="1" Spacing="10">
+                                    <ComboBox Header="Género" Width="200">
+                                        <ComboBoxItem Content="Masculino"/>
+                                        <ComboBoxItem Content="Femenino"/>
+                                        <ComboBoxItem Content="Otro"/>
+                                    </ComboBox>
+                                    <ComboBox Header="Tipo de Sangre" Width="200">
+                                        <ComboBoxItem Content="A+"/>
+                                        <ComboBoxItem Content="A-"/>
+                                        <ComboBoxItem Content="B+"/>
+                                        <ComboBoxItem Content="B-"/>
+                                        <ComboBoxItem Content="AB+"/>
+                                        <ComboBoxItem Content="AB-"/>
+                                        <ComboBoxItem Content="O+"/>
+                                        <ComboBoxItem Content="O-"/>
+                                    </ComboBox>
+                                    <TextBox Header="Correo Electrónico" PlaceholderText="ejemplo@correo.com"/>
+                                    <TextBox Header="Teléfono Celular" PlaceholderText="Ingrese número celular"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Estatura (cm):" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese la estatura en cm"/>
-                    </StackPanel>
+                    <!-- Antecedentes -->
+                    <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Antecedentes" 
+                                 FontSize="20" 
+                                 FontWeight="SemiBold" 
+                                 Margin="0,0,0,10"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Peso (kg):" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el peso en kg"/>
-                    </StackPanel>
+                            <TextBox Header="Antecedentes Personales" 
+                                PlaceholderText="Enfermedades crónicas"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="100"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Índice de Masa Corporal (IMC):" Width="150" VerticalAlignment="Center"/>
-                        <TextBox Width="300" PlaceholderText="Ingrese el IMC"/>
-                    </StackPanel>
-                </StackPanel>
+                            <CheckBox Content="¿Tiene alguna discapacidad?" Margin="0,10"/>
 
-                <!-- Botón para generar somatocarta -->
-                <Button Content="Generar Somatocarta" Width="200" Height="40" HorizontalAlignment="Left" Background="Blue" Foreground="White"/>
+                            <TextBox Header="Antecedentes Deportivos" 
+                                PlaceholderText="Describa la historia deportiva del paciente"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="100"
+                                Margin="0,10"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Signos Vitales -->
+                    <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Signos Vitales" 
+                                 FontSize="20" 
+                                 FontWeight="SemiBold" 
+                                 Margin="0,0,0,10"/>
+
+                            <Grid ColumnSpacing="15" RowSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0" Spacing="10">
+                                    <TextBox Header="Peso (kg)" PlaceholderText="0.0"/>
+                                    <TextBox Header="Talla (cm)" PlaceholderText="0.0"/>
+                                    <TextBox Header="Circunferencia Abdominal (cm)" PlaceholderText="0.0"/>
+                                    <TextBox Header="Temperatura (°C)" PlaceholderText="0.0"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" Spacing="10">
+                                    <TextBox Header="Frecuencia Respiratoria" PlaceholderText="0"/>
+                                    <TextBox Header="Frecuencia Cardíaca" PlaceholderText="0"/>
+                                    <TextBox Header="Saturación O2 (%)" PlaceholderText="0"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Examen Físico -->
+                    <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Examen Físico" 
+                                 FontSize="20" 
+                                 FontWeight="SemiBold" 
+                                 Margin="0,0,0,10"/>
+
+                            <TextBox Header="Observaciones del Examen Físico" 
+                                PlaceholderText="Describa los hallazgos del examen físico"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="100"/>
+                        </StackPanel>
+                    </Grid>
+
+                <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                    <StackPanel>
+                        <TextBlock Text="Datos Antropométricos" 
+                   FontSize="16"  
+                   FontWeight="SemiBold" 
+                   Margin="0,0,0,10"/>
+
+        <Grid ColumnSpacing="15" RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Campos para medidas -->
+            <StackPanel Grid.Column="0" Spacing="10">
+                <TextBox x:Name="tricipitalTextBox" Header="Pliegue Tricipital (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
+                <TextBox x:Name="subescapularTextBox" Header="Pliegue Subescapular (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
+                <TextBox x:Name="suprailiacoTextBox" Header="Pliegue Suprailíaco (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
+                <TextBox x:Name="abdominalTextBox" Header="Pliegue Abdominal (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
+                <TextBox x:Name="musloTextBox" Header="Pliegue Muslo (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
+                <TextBox x:Name="pantorrillaTextBox" Header="Pliegue Pantorrilla (mm)" PlaceholderText="0.0" TextChanged="Pliegues_TextChanged"/>
             </StackPanel>
+
+            <!-- Espacio para Somatocarta -->
+            <Border Grid.Column="1" 
+                    BorderBrush="Gray" 
+                    BorderThickness="1" 
+                    CornerRadius="4">
+                <Grid x:Name="SomatocartaContainer" 
+                      Height="300" 
+                      Background="White">
+                    <TextBlock Text="Somatocarta" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               FontSize="18"/>  <!-- Cambié el tamaño de la fuente a 18 -->
+                </Grid>
+            </Border>
+        </Grid>
+    </StackPanel>
+                </Grid>
+
+
+
+
+                <!-- Evaluaciones Complementarias -->
+                    <Grid Background="#f0f0f0" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="Evaluaciones Complementarias" 
+                                 FontSize="20" 
+                                 FontWeight="SemiBold" 
+                                 Margin="0,0,0,10"/>
+
+                            <Grid ColumnSpacing="15" RowSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox Grid.Column="0" 
+                                    Header="Encargado" 
+                                    PlaceholderText="Nombre del encargado"/>
+                                <TextBox Grid.Column="1" 
+                                    Header="Tipo de Evaluación" 
+                                    PlaceholderText="Tipo"/>
+                                <TextBox Grid.Column="2" 
+                                    Header="Resultado" 
+                                    PlaceholderText="Resultado"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Botones de Acción -->
+                    <StackPanel Orientation="Horizontal" 
+                           HorizontalAlignment="Center" 
+                           Spacing="20" 
+                           Margin="0,20">
+                        <Button Content="Guardar" 
+                            Background="#007AFF" 
+                            Foreground="White"
+                            Padding="40,10"
+                            CornerRadius="4"/>
+                        <Button Content="Cancelar" 
+                            Background="#FF3B30" 
+                            Foreground="White"
+                            Padding="40,10"
+                            CornerRadius="4"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
         </ScrollViewer>
-    </Grid>
 </Page>
+
